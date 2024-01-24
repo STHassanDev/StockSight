@@ -11,3 +11,14 @@ def get_stock_price(ticker): # Will be used when the prompt demands the stock pr
 def simple_moving_average(ticker,time):
     price = yf.Ticker(ticker).history(period='1y').Close
     return str(price.rolling(window=time).mean().iloc[-1])
+
+def plot_stock_price(ticker):
+    data = yf.Ticker(ticker).history(period='1y')
+    plt.figure(figsize=(10,5))
+    plt.plot(data.index,data.Close)
+    plt.title('{ticker} Stock Price Over the Last Year')
+    plt.xlabel("Date")
+    plt.ylabel("Stock Price ($)")
+    plt.grid(True)
+    plt.savefig("stock.png")
+    plt.close()
