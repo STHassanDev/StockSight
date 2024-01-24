@@ -8,3 +8,6 @@ import yfinance as yf
 def get_stock_price(ticker): # Will be used when the prompt demands the stock price of a certain company
     return str(yf.Ticker(ticker).history(period='1y').iloc[-1].Close)
 
+def simple_moving_average(ticker,time):
+    price = yf.Ticker(ticker).history(period='1y').Close
+    return str(price.rolling(window=time).mean().iloc[-1])
