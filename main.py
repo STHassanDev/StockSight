@@ -102,8 +102,6 @@ if prompt:
 
         response_message = first_resp.choices[0].message
 
-        st.text(response_message.function_call)
-
         if response_message.function_call:
             function_name = response_message.function_call.name
             function_args = json.loads(response_message.function_call.arguments)
