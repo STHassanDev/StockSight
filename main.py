@@ -43,7 +43,7 @@ functions = [ #The list of dictionaries chat gpt will use to determine which fun
 
     {
         'name':'simple_moving_average',
-        'description': "Calculates the simple moving average of stock given the ticker symbol and a window.",
+        'description': "Calculates the simple moving average of stock given the ticker symbol and a .",
         'parameters': {
             'type': 'object',
             'properties': {
@@ -51,18 +51,18 @@ functions = [ #The list of dictionaries chat gpt will use to determine which fun
                     'type': 'string',
                     'description': 'The ticker symbol for the stock of a company (Example: NFLX for Netflix or ADBE for Adobe)'
                     },
-                'window':{
-                    'type': 'interger',
+                'time':{
+                    'type': 'integer',
                     'description': "The timeframe to use when finding the simple moving average."
                     }
                 },
-            'required': ["ticker","window"]
+            'required': ["ticker","time"]
             }
         },
 
     {
-        'name':'get_stock_price',
-        'description': "Retrieves the latest stock price given the ticker of a company.",
+        'name':'plot_stock_price',
+        'description': "Plots the stock price for the last year when given the ticker symbol of a company.",
         'parameters': {
             'type': 'object',
             'properties': {
@@ -73,6 +73,11 @@ functions = [ #The list of dictionaries chat gpt will use to determine which fun
                 },
             'required': ["ticker"]
             }
-        }
-    
+        } 
 ]
+
+available_funcs = {
+    'get_stock_price': get_stock_price,
+    'simple_moving_average': simple_moving_average,
+    'plot_stock_price': plot_stock_price
+}
