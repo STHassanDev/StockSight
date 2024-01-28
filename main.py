@@ -102,9 +102,11 @@ if prompt:
 
         response_message = first_resp.choices[0].message
 
-        if response_message.get('function_call'):
-            function_name = response_message['function_call']['name']
-            function_args = json.loads(response_message['function_call']['arguments'])
+        st.text(response_message.function_call)
+
+        if response_message.function_call:
+            function_name = response_message.function_call.name
+            function_args = json.loads(response_message.function_call.arguments)
             if function_name in ['get_stock_price','plot_stock_price']:
                 args_dict = {'ticker':function_args.get('ticker')}
             elif function_name in ['simple_moving_average']:
@@ -130,7 +132,7 @@ if prompt:
                 st.text(second_resp.choices[0].message.content)
                 st.session_state['messages'].append({'role': 'assistant','content': second_resp.choices[0].message.content})
         else:
-            st.text(response_message['content'])         
+            st.text(response_message.content)         
             st.session_state['messages'].append({'role': 'assistant','content': response_message.content})
     except Exception as e:
         raise e
