@@ -1,24 +1,35 @@
 <h1>StockSight Assistant</h1>
 
-<p>Welcome to StockSight Assistant, a powerful tool for accessing accurate stock data from Yahoo Finance API and visualizing it using Streamlit. This project allows you to retrieve stock information and plot stock prices for the past year with ease.</p>
+<p>Welcome to StockSight Assistant, your reliable stock companion powered by accurate data from the Yahoo Finance API. This tool provides users with real-time stock data and the ability to visualize price trends over the past year. Additionally, users can calculate simple moving averages for any given timeframe.</p>
 
-<h2>Setup Instructions</h2>
+<h2>Getting Started</h2>
 
 <ol>
-<li><strong>Python Environment:</strong> Make sure you have Python installed on your system. You can download it from <a href="https://www.python.org/downloads/">here</a>.</li>
-<li><strong>Required Libraries:</strong> Install the necessary libraries by running:<br>
-<code>pip install -r requirements.txt</code></li>
-<li><strong>API Key:</strong> You need to obtain an API key from OpenAI for accessing their services. This key should be kept secure and not shared online. Create a plain text file (e.g., <code>openai_api_key</code>) containing your API key. Place this file in the same directory as the main Python file. The API key file should contain only the key without any additional text.</li>
+  <li><strong>API Key Setup:</strong> You need to obtain an API key from OpenAI. This key must be stored in a plain text file in the same directory as the main file. The name of this file should replace "api_key" in line 8 of the main file.</li>
+
+  <li><strong>Dependencies Installation:</strong> Install the required dependencies by running:
+      <pre><code>pip install -r requirements.txt</code></pre>
+  </li>
+
+  <li><strong>Running the Application:</strong> To start the application, run the following command:
+      <pre><code>streamlit run main.py</code></pre>
+  </li>
 </ol>
 
-<h2>Usage</h2>
+<h2>Features</h2>
 
-<p>To run the StockSight Assistant, execute the following command:</p>
-<code>streamlit run main.py</code>
-<p>This will launch the Streamlit application in your default web browser.</p>
+<ul>
+  <li><strong>Accurate Stock Data:</strong> Utilizes the Yahoo Finance API to fetch precise stock data.</li>
+  
+  <li><strong>Price Plotting:</strong> Visualizes the price trends of a stock over the past year.</li>
 
-<h3>Note</h3>
+  <li><strong>Simple Moving Average Calculation:</strong> Calculates simple moving averages for any given timeframe.</li>
+</ul>
 
-<p>Ensure that the file containing your OpenAI API key is named appropriately and placed in the correct directory. The name of this file should replace "api_key" in line 8 of the main Python file (<code>main.py</code>).</p>
+<h2>Important Notes</h2>
 
-<p><strong>Caution:</strong> Do not share your API key with anyone online.</p>
+<ul>
+  <li><strong>Security:</strong> Ensure that your API key is stored securely and not shared with anyone online.</li>
+
+  <li><strong>Functionality Limitations:</strong> While the tool provides accurate stock data and basic analysis like simple moving averages, more complex calculations such as the relative strength index (RSI) may not be implemented yet.</li>
+</ul>
