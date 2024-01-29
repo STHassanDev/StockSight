@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import streamlit as st 
 import yfinance as yf 
 
-client = OpenAI(api_key = open("secret/Key","r").read())
+client = OpenAI(api_key = open("api_key","r").read())
 
 def get_stock_price(ticker): # Will be used when the prompt demands the stock price of a certain company
     return str(yf.Ticker(ticker).history(period='1y').iloc[-1].Close)
@@ -84,6 +84,7 @@ func_maps = {
 
 if 'messages' not in st.session_state:
     st.session_state['messages'] = []
+
 
 st.title("Stock Sight Chat Bot")
 
